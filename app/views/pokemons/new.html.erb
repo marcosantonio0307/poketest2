@@ -1,0 +1,4 @@
+<p>Selecione o pokemon</p>
+<% PokeApi.get(pokemon: {page: 1}).results.each do |poke| %>
+  <%= link_to poke.name, team_pokemons_path(@team, name: poke.name), method: :post %> <br>
+<% end %>

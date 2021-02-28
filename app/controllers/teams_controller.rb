@@ -16,7 +16,6 @@ class TeamsController < ApplicationController
   end
 
   def show
-  	@pokemon = PokeApi.get(pokemon: 'bulbasaur')
   end
 
   private
