@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_28_143544) do
+ActiveRecord::Schema.define(version: 2021_02_27_143544) do
 
   create_table "pokemons", force: :cascade do |t|
     t.string "name"
@@ -29,17 +29,17 @@ ActiveRecord::Schema.define(version: 2021_02_28_143544) do
   end
 
   create_table "trainers", force: :cascade do |t|
-    t.string "name"
-    t.integer "age"
-    t.string "login"
-    t.string "gender"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.index ["login"], name: "index_trainers_on_login", unique: true
+    t.string "login"
+    t.string "name"
+    t.integer "age"
+    t.string "gender"
+    t.index ["email"], name: "index_trainers_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_trainers_on_reset_password_token", unique: true
   end
 
   add_foreign_key "pokemons", "teams"
