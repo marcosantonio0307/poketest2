@@ -41,7 +41,7 @@ class AddDeviseToTrainers < ActiveRecord::Migration[6.0]
       # t.timestamps null: false
     end
 
-    add_index :trainers, :email,                unique: true
+    add_index :trainers, :email,                unique: false
     add_index :trainers, :reset_password_token, unique: true
     # add_index :trainers, :confirmation_token,   unique: true
     # add_index :trainers, :unlock_token,         unique: true
