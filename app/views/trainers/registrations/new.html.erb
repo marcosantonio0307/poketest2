@@ -1,4 +1,38 @@
-<h2>Sign up</h2>
+<div class="container">
+  <div class="row col-lg-12 col-md-12">
+    <div class="col-lg-5 col-md-10 box-login">
+      <%= image_tag 'logo.png' %>
+
+      <h3 align="center">CRIAR CONTA</h3>
+
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= render "trainers/shared/error_messages", resource: resource %>
+
+        <div class="field">
+          <%= f.text_field :login, autofocus: true, placeholder: 'Login' %>
+        </div> <br>
+
+        <div class="field">
+          <% if @minimum_password_length %>
+          <em>(<%= @minimum_password_length %> characters minimum)</em>
+          <% end %>
+          <%= f.password_field :password, autocomplete: "new-password", placeholder: 'Senha' %>
+        </div> <br>
+
+        <div class="field">
+          <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: 'Confirme a senha' %>
+        </div>
+
+        <div class="actions">
+          <%= f.submit "Cadastrar", class: 'btn btn-success' %>
+        </div>
+      <% end %>
+      
+      <a href="/trainers/sign_in">Já tenho conta</a>
+    </div> 
+  </div>
+</div>
+
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "trainers/shared/error_messages", resource: resource %>

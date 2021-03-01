@@ -26,6 +26,7 @@ body {
 
 .bg-red {
   background: #ee4025;
+  background-size: cover !important;
 }
 
 .navbar-brand {
@@ -54,4 +55,28 @@ body {
 
 .welcome {
   margin-top: 2ex;
+}
+
+.box-login {
+  min-height: 400px;
+  background-color: rgba(52, 49, 49, 0.7);
+  padding: 4ex 2ex;
+  color: #fff;
+  text-align: center;
+  border-radius: 0.5em;
+  margin: 10ex auto;
+}
+
+.box-login .btn {
+  margin-top: 2ex;
+  margin-bottom: 2ex;
+}
+
+.box-login img {
+  width: 15ex;
+  margin-bottom: 2ex;
+}
+
+.box-login a {
+  color: #fff;
 }
