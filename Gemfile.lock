@@ -58,7 +58,7 @@ GEM
       zeitwerk (~> 2.2, >= 2.2.2)
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
-    autoprefixer-rails (10.0.0.2)
+    autoprefixer-rails (10.2.4.0)
       execjs
     babel-source (5.8.35)
     babel-transpiler (0.7.0)
@@ -126,7 +126,7 @@ GEM
       mini_portile2 (~> 2.5.0)
       racc (~> 1.4)
     orm_adapter (0.5.0)
-    pg (1.2.2)
+    pg (1.2.3)
     poke-api-v2 (0.1.1)
     popper_js (1.16.0)
     public_suffix (4.0.6)
@@ -263,7 +263,7 @@ DEPENDENCIES
   webpacker (~> 4.0)
 
 RUBY VERSION
-   ruby 2.6.5p114
+   ruby 2.7.2p137
 
 BUNDLED WITH
-   1.17.3
+   2.1.4
