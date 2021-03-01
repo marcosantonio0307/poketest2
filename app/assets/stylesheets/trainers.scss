@@ -1,3 +1,27 @@
 // Place all the styles related to the trainers controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.trainer-profile {
+  margin: 2ex auto;
+  padding: 3ex;  
+  border: solid 1px;
+  border-radius: 0.2em;
+}
+
+.trainer-profile h3 {
+  text-align: center;
+  margin-bottom: 2ex;
+}
+
+.team {
+  background: #ffcb05;
+  color: #3466af;
+  border-radius: 0.3em;
+  margin: 1ex;
+  padding: 1ex;
+}
+
+.team:hover {
+  background: #f2c318;
+}

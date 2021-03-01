@@ -1,5 +1,5 @@
 class TrainersController < ApplicationController
-  before_action :authenticate_trainer!, only:[:index]
+  before_action :set_trainer, only:[:edit, :update, :show]
   def index
   	@trainers = Trainer.all
   	@teams = current_trainer.teams
@@ -15,12 +15,21 @@ class TrainersController < ApplicationController
   	if Trainer.all.map{|t| t.login}.include? @trainer.login
   	  render :new
   	else
-	  redirect_to root_path
+	    redirect_to root_path
+    end
 	end
+
+  def update
+    @trainer.update(name: params[:trainer][:name], age: params[:trainer][:age], gender: params[:trainer][:gender])
+    redirect_to trainer_path(@trainer)
   end
 
   private
     def trainer_params
       params.require(:trainer).permit(:login, :password, :name, :age, :gender)
+    end
+
+    def set_trainer
+      @trainer = Trainer.find(params[:id])
     end
 end
