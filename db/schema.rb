@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_27_143544) do
+ActiveRecord::Schema.define(version: 2021_02_27_143543) do
 
   create_table "pokemons", force: :cascade do |t|
     t.string "name"
@@ -38,7 +38,7 @@ ActiveRecord::Schema.define(version: 2021_02_27_143544) do
     t.string "name"
     t.integer "age"
     t.string "gender"
-    t.index ["email"], name: "index_trainers_on_email", unique: true
+    t.index ["email"], name: "index_trainers_on_email"
     t.index ["reset_password_token"], name: "index_trainers_on_reset_password_token", unique: true
   end
 
