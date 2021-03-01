@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  devise_for :trainers
   root 'teams#index'
+  devise_for :trainers
   resources :trainers
   resources :teams do
   	resources :pokemons
