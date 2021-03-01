@@ -14,14 +14,15 @@
   margin-bottom: 2ex;
 }
 
-.team {
-  background: #ffcb05;
-  color: #3466af;
-  border-radius: 0.3em;
-  margin: 1ex;
-  padding: 1ex;
+.profile-image {
+  width: 15ex;
+  height: 15ex;
+  border: solid 2px;
+  border-radius: 15ex;
+  margin: 0 auto;
+  background-color: rgba(52, 102, 175, 0.2);
 }
 
-.team:hover {
-  background: #f2c318;
+.profile-image img {
+  width: 100%;
 }

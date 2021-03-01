@@ -11,7 +11,7 @@
 
   <body>
     <% if signed_in? %>
-      <%= react_component 'navbar', {link: 'trainers/sign_out', login: (current_trainer.login), trainer: (url_for current_trainer), logo: (image_path 'pokebola.png')} %>
+      <%= react_component 'navbar', {link: '/trainers/sign_out', login: (current_trainer.login), trainer: (url_for current_trainer), logo: (image_path 'pokebola.png')} %>
     <% end %>
     <%= yield %>
   </body>

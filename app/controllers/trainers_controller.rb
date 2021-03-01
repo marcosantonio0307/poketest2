@@ -2,21 +2,26 @@ class TrainersController < ApplicationController
   before_action :set_trainer, only:[:edit, :update, :show]
 
   def new
-  	@trainer = Trainer.new
+    @trainer = Trainer.new
   end
 
   def create
-  	@trainer = Trainer.new(trainer_params)
+    @trainer = Trainer.new(trainer_params)
 
-  	if Trainer.all.map{|t| t.login}.include? @trainer.login
-  	  render :new
-  	else
-	    redirect_to root_path
+    if Trainer.all.map{|t| t.login}.include? @trainer.login
+      render :new
+    else
+      redirect_to root_path
     end
-	end
+  end
 
   def update
-    @trainer.update(name: params[:trainer][:name], age: params[:trainer][:age], gender: params[:trainer][:gender])
+    if params[:trainer][:profile_image] == nil && @trainer.profile_image.attached?
+      values = params.require(:trainer).permit(:name, :age, :gender)
+    else
+      values = params.require(:trainer).permit(:name, :age, :gender, :profile_image)
+    end
+    @trainer.update values
     redirect_to trainer_path(@trainer)
   end
 

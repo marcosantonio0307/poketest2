@@ -2,6 +2,11 @@
   <div class="row col-lg-12 col-md-12">
   	<div class="col-lg-8 col-md-8 trainer-profile">
   	  <%= link_to :Editar, edit_trainer_path(@trainer) %>
+  	  <div class="profile-image">
+  	  	<% if @trainer.profile_image.attached? %>
+  	      <%= image_tag @trainer.profile_image %>
+  	    <% end %>
+  	  </div>
   	  <h3><%= @trainer.login %></h3>
   	  <p>NOME: <%= @trainer.name %></p>
   	  <p>IDADE: <%= @trainer.age %></p>
