@@ -2,6 +2,6 @@ import React, { Component } from 'react'
 
 export default class Hello extends Component {
   render() {
-  	return <h1>Hello Word!</h1>
+  	return <h3 align="center" class="welcome">Seja Bem Vindo Treinador!</h3>
   }
 }
