@@ -2,6 +2,9 @@ class TeamsController < ApplicationController
   before_action :set_team, only:[:show]
   
   def index
+    if current_trainer.name == nil
+      redirect_to edit_trainer_path(current_trainer)
+    end
     @teams = current_trainer.teams
   end
 

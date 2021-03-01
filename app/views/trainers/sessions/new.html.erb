@@ -1,26 +1,33 @@
-<h2>Log in</h2>
+<div class="container">
+  <div class="row col-lg-12 col-md-12">
+    <div class="col-lg-5 col-md-10 box-login">
+      <%= image_tag 'logo.png' %>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :login %><br />
-    <%= f.text_field :login, autofocus: true %>
+      <h3 align="center">ENTRAR</h3>
+
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <div class="field">
+          <%= f.text_field :login, autofocus: true, placeholder: 'Login' %>
+        </div>
+
+        <div class="field">
+          <br />
+          <%= f.password_field :password, autocomplete: "current-password", placeholder: 'Senha' %>
+        </div>
+
+        <% if devise_mapping.rememberable? %>
+          <div class="field">
+            <%= f.check_box :remember_me %>
+            <%= f.label :lembre_me %>
+          </div>
+        <% end %>
+
+        <div>
+          <%= f.submit "Entrar", class: 'btn btn-success' %>
+        </div>
+      <% end %>
+      
+      <a href="/trainers/sign_up">Não tenho conta</a>
+    </div> 
   </div>
-
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
-
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
-    </div>
-  <% end %>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
-  </div>
-<% end %>
-
-<%= render "trainers/shared/links" %>
+</div>
