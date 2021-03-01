@@ -1,4 +1,17 @@
-<p>Selecione o pokemon</p>
-<% PokeApi.get(pokemon: {page: 1}).results.each do |poke| %>
-  <%= link_to poke.name, team_pokemons_path(@team, name: poke.name), method: :post %> <br>
-<% end %>
+<div class="container">
+  <div class="row col-lg-12 col-md-12">
+  	<div class="col-lg-12 col-md-12">
+      <h3 align="center" class="welcome">Selecione o Pokemon</h3>
+  	</div>
+  	<div class="col-lg-8 col-md-8 trainer-profile">
+  	  <% PokeApi.get(pokemon: {page: 1}).results.each do |poke| %>
+  	  	<%= link_to team_pokemons_path(@team, name: poke.name), method: :post do %>
+	  	  <div class="team">
+	  	  	<%= image_tag PokeApi.get(pokemon: poke.name).sprites.front_default %>
+	  	  	<span style="margin-left: 2ex;"><%= poke.name %></span>
+	  	  </div>
+	  	<% end %>
+	  <% end %>
+  	</div>  	
+  </div>
+</div>

@@ -1,3 +1,17 @@
 // Place all the styles related to the teams controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.pokemon-list {
+  float: left;
+  background-color: rgba(52, 102, 175, 0.2);
+  padding: 1ex;
+  border: solid 1px #fff;
+}
+
+.remove-pokemon {
+  padding: 0.5ex 1ex;
+  color: #fff;
+  background: #ee4025;
+  border-radius: 2ex;
+}

@@ -1,9 +1,5 @@
 class TrainersController < ApplicationController
   before_action :set_trainer, only:[:edit, :update, :show]
-  def index
-  	@trainers = Trainer.all
-  	@teams = current_trainer.teams
-  end
 
   def new
   	@trainer = Trainer.new

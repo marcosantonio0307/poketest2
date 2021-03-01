@@ -1,11 +1,30 @@
-<%= @team.name %> <br>
-<%= link_to 'Adicionar Pokemon', new_team_pokemon_path(@team) %><br><br>
-<% @team.pokemons.each do |poke| %>
-  <p>
-  	<%= image_tag PokeApi.get(pokemon: poke.name).sprites.front_default %><%= poke.name %> | 
-  	<% PokeApi.get(pokemon: poke.name).types.each do |t| %>
-  	  <%= t.type.name %>
-  	<% end %>
-  	<%= link_to 'remover', team_pokemon_path(@team, poke), method: :delete %>
-  </p>
-<% end %>
+<div class="container">
+  <div class="row col-lg-12 col-md-12">
+  	<div class="col-lg-12 col-md-12">
+      <h3 class="welcome"><%= @team.name %></h3>
+  	</div>
+  	<div class="col-lg-12 col-md-12 trainer-profile">
+  	  <% if @team.pokemons.count < 6 %>
+  	    <span style="float: right;"><%= link_to 'Adicionar', new_team_pokemon_path(@team) %></span>
+  	  <% end %>
+  	  <p>Pokemons</p>
+  	  <% @team.pokemons.each do |poke| %>
+  		<div class="col-lg-2 col-md-12 pokemon-list">
+  		  <div class="col-lg-12 col-md-12">
+  		  	<%= link_to 'X', team_pokemon_path(@team, poke), method: :delete, class: 'remove-pokemon' %>
+  		  	<p align="center"><%= image_tag PokeApi.get(pokemon: poke.name).sprites.front_default %></p>
+  		  </div>
+  		  <div class="col-lg-12 col-md-12">
+  		  	<p align="center"><%= poke.name %></p>
+  		  	<p align="center">Tipo</p>
+  		  	<p align="center">
+  		  	  <% PokeApi.get(pokemon: poke.name).types.each do |t| %>
+  	  		    <%= t.type.name %>
+  			  <% end %>
+  			</p>
+  		  </div>
+  		</div>
+  	  <% end %>
+  	</div>  	
+  </div>
+</div>

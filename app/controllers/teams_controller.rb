@@ -1,5 +1,10 @@
 class TeamsController < ApplicationController
   before_action :set_team, only:[:show]
+  
+  def index
+    @teams = current_trainer.teams
+  end
+
   def new
   	@team = Team.new
   end
